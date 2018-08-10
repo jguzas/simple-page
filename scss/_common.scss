@@ -1,0 +1,73 @@
+body {
+    font-family: $font-family__sans-serif;
+    font-size: $font-size__base;
+    background-color: $secondary-gray-1;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+}
+
+h1 {
+    color: $black;
+    font-family: $font-family__serif;
+    font-size: 37px;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+h2 {
+    color: $black;
+    font-family: $font-family__serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.13;
+    margin-top: 0;
+    margin-bottom: 11px;
+}
+
+p {
+    color: $secondary-gray-4;
+    font-size: $font-size__base;
+    font-weight: 400;
+    line-height: 1.43;
+    margin-bottom: 0;
+    margin-top: 0;
+
+    + p {
+        margin-top: 25px;
+    }
+}
+
+hr {
+    height: 3px;
+    background-color: $black;
+    border: none;
+    margin-bottom: 17px;
+}
+
+label {
+    color: $form-label__color;
+    display: block;
+    font-family: $font-family__sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: $form-label__margin-bottom;
+}
+
+input,
+textarea {
+    border: $form-input__border;
+    border-radius: $form-input__border-radius;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: $form-input__margin-bottom;
+    padding: $form-input__padding;
+    width: $form-input__width;
+}
+
+input {
+    height: 31px;
+}

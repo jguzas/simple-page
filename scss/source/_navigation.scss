@@ -1,0 +1,285 @@
+.sub-navigation {
+    text-align: center;
+
+    &__list {
+        @include list-style-reset;
+        @include inline-block-space-container;
+    }
+
+    &__item {
+        @include inline-block-space-item;
+        color: $black;
+        display: inline-block;
+
+        &:not(:last-child){
+            margin-right: 15px;
+        }
+    }
+
+    &__link {
+        color: $black;
+
+        &:active,
+        &:focus,
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.navigation {
+    flex-grow: 1;
+    text-align: right;
+
+    &__list {
+        @include list-style-reset;
+    }
+
+    &__item {
+        @include inline-block-space-item;
+        color: $black;
+        display: inline-block;
+        position: relative;
+    }
+
+    &__link {
+        color: $white;
+        font-size: 20px;
+    }
+
+    .navigation-submenu {
+        @include list-style-reset;
+
+        &__link {
+            box-sizing: border-box;
+            color: white;
+            font-size: 12px;
+            display: block;
+            white-space: nowrap;
+            width: 100%;
+
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: $menu-color__active;
+            }
+        }
+    }
+
+    &__mobile-button {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        box-sizing: border-box;
+        vertical-align: bottom;
+    }
+
+    &__mobile-menu {
+        background-color: $black;
+        display: block;
+        height: 4px;
+        margin-top: 18px;
+        position: relative;
+        width: 100%;
+
+        &:after,
+        &:before {
+            content: '';
+            background-color: $black;
+            display: block;
+            position: absolute;
+            height: 4px;
+            width: 100%;
+        }
+
+        &:after {
+            top: 10px;
+        }
+
+        &:before {
+            top: -10px;
+        }
+    }
+}
+
+@media only screen and (min-width: $screen-s) {
+    .sub-navigation {
+        text-align: right;
+    }
+}
+
+@media only screen and (max-width: $screen-l - 1) {
+    .navigation {
+        &__mobile-button {
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: $primary-color-light;
+                cursor: pointer;
+            }
+
+            &.active {
+                + .navigation__list {
+                    display: block;
+                    position: absolute;
+                }
+            }
+        }
+
+        &__list {
+            box-sizing: border-box;
+            display: none;
+            background-color: $menu-color;
+            padding: $layout__space;
+            left: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        &__item {
+            display: block;
+            line-height: 40px;
+        }
+
+        &__link {
+            display: block;
+            padding-left: $layout__space;
+            padding-right: $layout__space;
+
+            &:active,
+            &:focus,
+            &:hover {
+                background-color: $menu-color__active;
+            }
+        }
+    }
+
+    .navigation-submenu__link {
+        padding: 5px $layout__space;
+    }
+}
+
+@media only screen and (min-width: $screen-l) {
+    .navigation {
+        flex-grow: 1;
+        text-align: right;
+
+        &__list {
+            @include inline-block-space-container;
+            display: none;
+        }
+
+        &__item {
+            @include inline-block-space-item;
+
+            &:not(:last-child){
+                margin-right: 15px;
+            }
+
+            &:hover {
+                .navigation-submenu {
+                    display: block;
+                }
+
+                .navigation__link {
+                    color: $black;
+                }
+            }
+        }
+
+        &__link {
+            color: $white;
+            font-size: 20px;
+        }
+
+        .navigation-submenu {
+            @include list-style-reset;
+            background-color: $menu-color;
+            display: none;
+            text-align: left;
+            min-width: 150px;
+            left: 50%;
+            top: 41px;
+            transform: translate(-50%);
+            position: absolute;
+
+            &:before {
+                bottom: 100%;
+                left: 50%;
+                border: solid transparent;
+                content: " ";
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-bottom-color: $menu-color;
+                border-width: 10px;
+                margin-left: -10px;
+            }
+
+
+            &__link {
+                box-sizing: border-box;
+                color: white;
+                font-size: 12px;
+                display: block;
+                padding: 4px 7px;
+                white-space: nowrap;
+                width: 100%;
+
+                &:active,
+                &:focus,
+                &:hover {
+                    background-color: $menu-color__active;
+                }
+            }
+        }
+
+        &__mobile-button {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            vertical-align: bottom;
+        }
+
+        &__mobile-menu {
+            background-color: $black;
+            display: block;
+            height: 4px;
+            margin-top: 23px;
+            position: relative;
+            width: 100%;
+
+            &:after,
+            &:before {
+                content: '';
+                background-color: $black;
+                display: block;
+                position: absolute;
+                height: 4px;
+                width: 100%;
+            }
+
+            &:after {
+                top: 10px;
+            }
+
+            &:before {
+                top: -10px;
+            }
+        }
+    }
+
+
+    .navigation{
+        &__list {
+            display: block;
+        }
+
+        &__mobile-button {
+            display: none;
+        }
+
+    }
+}

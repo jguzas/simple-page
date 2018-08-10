@@ -1,0 +1,24 @@
+@mixin list-style-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+//
+//  Remove spaces between elements with display: inline-block
+//  ---------------------------------------------
+
+@mixin inline-block-space-container() {
+    font-size: 0;
+    letter-spacing: -1px;
+    line-height: 0;
+}
+
+@mixin inline-block-space-item(
+    $_font-size: $font-size__base,
+    $_line-height: normal
+) {
+    font-size: $_font-size;
+    letter-spacing: normal;
+    line-height: $_line-height;
+}

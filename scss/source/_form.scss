@@ -1,0 +1,35 @@
+.form {
+    padding: $layout__space;
+    border: 1px solid $secondary-gray-3;
+}
+
+.button {
+    border: $form-input__border;
+    border-radius: none;
+    text-transform: uppercase;
+    padding: 12px 24px;
+
+    &--primary {
+        color: $white;
+        background-color: $primary-color;
+        border-color: $primary-color;
+
+        &:active,
+        &:focus,
+        &:hover {
+            color: $primary-color;
+            background-color: $primary-color-light;
+        }
+    }
+}
+
+[class^="error"] {
+    display: none;
+    color: $primary-color;
+    margin-top: -17px;
+    margin-bottom: 15px;
+
+    &.active {
+        display: block;
+    }
+}

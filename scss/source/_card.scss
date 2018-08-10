@@ -1,0 +1,41 @@
+.card {
+    box-sizing: border-box;
+    background-color: $white;
+    padding: $layout__space;
+    width: 100%;
+
+    + .card {
+        margin-top: $layout__space;
+    }
+
+    &__list {
+        @include list-style-reset;
+    }
+
+    &__item {
+        color: $secondary-blue;
+        padding: 7px 0;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $secondary-gray-2;
+        }
+    }
+}
+
+@media only screen and (min-width: $screen-m) {
+    .card {
+        width: calc(50% - #{$layout__space} / 2);
+
+        + .card {
+            margin-top: 0;
+        }
+
+        &--right {
+            margin-left: calc(#{$layout__space} / 2)
+        }
+
+        &--left {
+            margin-right: calc(#{$layout__space} / 2)
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.header {
+    background: $primary-color;
+    box-sizing: border-box;
+    padding: 25px $layout__space 15px;
+
+    &__inner {
+        margin: 0 auto;
+        max-width: $layout-max__width;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .logo {
+        color: $primary-color-light;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: $screen-s) {
+    .header {
+        .logo {
+            font-size: 60px;
+        }
+    }
+}
